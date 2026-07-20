@@ -28,9 +28,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install self-host deps
-        working-directory: selfhost
-        run: npm install --no-audit --no-fund
+      - name: Install deps at the repo root
+        # Mirror the Dockerfile: install from the self-host manifest at the ROOT
+        # so both worker/ (imports jose) and selfhost/ (imports better-sqlite3)
+        # resolve node_modules. Installing inside selfhost/ hides jose from the
+        # sibling worker/ directory.
+        run: cp selfhost/package.json package.json && npm install --no-audit --no-fund
       - name: In-process smoke test (full sync data plane)
         working-directory: selfhost
         run: npm run smoke
