@@ -4,7 +4,11 @@
 
 # Relic
 
-**Copy it once. Keep it forever.** Relic is an end-to-end-encrypted clipboard
+**Copy it once. Keep it forever.** 
+
+https://github.com/user-attachments/assets/88892b92-598f-4785-ae5f-1ed2e1558293
+
+Relic is an end-to-end-encrypted clipboard
 manager that keeps a permanent, searchable history of everything you copy and
 syncs it across your devices. Only you can read it: everything is encrypted on
 your device with XChaCha20-Poly1305 and a key derived from your passphrase with
